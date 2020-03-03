@@ -5,6 +5,18 @@
             {{ form.hidden_tag() }}
             {{ form.game_no.label }}
             {{ form.game_no }}
+	    {% if form.game_no.errors %}
+            
+            <div class="error">
+                
+		{% for error in form.game_no.errors %}
+                    
+                    <span>{{ error }}</span>
+                
+                {% endfor %}
+            </div>
+        
+            {% endif %}
             <br>
             {{ form.losing_team.label }}
             {{ form.losing_team }}

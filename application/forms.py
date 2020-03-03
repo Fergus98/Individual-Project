@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, IntegerField, SubmitField
 from wtforms.validators import DataRequired, Length
 
 class GameForm(FlaskForm):
@@ -28,3 +28,25 @@ class GameForm(FlaskForm):
         ]
     )
     submit = SubmitField('Save the Game!')
+
+class PlayersForm(FlaskForm):
+    team_id = IntegerField('Team Number',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=200)
+        ]
+    )
+    
+    wins = IntegerField('Number of Wins',
+        validators = [
+            DataRequired(),
+            Length(min=0, max=200)
+        ]
+    )
+    
+    losses = IntegerField('Number of Losses',
+        validators = [
+            DataRequired(),
+            Length(min=0, max=200)
+        ]
+    )

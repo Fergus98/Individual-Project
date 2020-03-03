@@ -11,3 +11,14 @@ class Game(db.Model):
             'Game Number: ', self.game_no,'\r\n',
             'Winning Team', self.winning_team, '\r\n','Losing Team: ', self.losing_team, '\r\n', self.score
             ])
+
+class Team(db.Model):
+    team_id = db.Column(db.Integer, primary_key=True)
+    wins = db.Column(db.Integer, nullable=False)
+    losses = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return ''.join([
+            'Team Number: ', self.team_id,'\r\n',
+            'Total Wins: ', self.wins, '\r\n', 'Losses: ', self.losses
+            ])
