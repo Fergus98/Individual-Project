@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <h1>Game Table</h1>
+    <p>Current Game League</p>
+    <p1> Use the Navbar to acess the login page and start creating a game!</p1>
+    {% for game in game %}
+    
+    	<div>
+            <h3>{{ game.game_no }}</h3>
+	    <h4><b> - Winning Team:</b>{{ game.winning_team }}</h4>
+	    <h4><b> - Losing Team:</b>{{ game.losing_team }}</h4>
+	    <h4><b> - Final Score:</b>{{ game.score }}</h4>
+        </div>
+    {% endfor %}
+{% endblock body_content %}
+~
+

@@ -32,6 +32,12 @@ def createGame():
 
     return render_template('games.html', title='Add Game', form=form)
 
+@app.route('/showgames', methods=['GET'])
+def showGames():
+    gameData=Game.query.all()
+    return render_template('showgames.html', title='Games', game=gameData)
+
+
 @app.route('/players', methods=['GET', 'POST'])
 def createPlayers():
     form = PlayersForm()
