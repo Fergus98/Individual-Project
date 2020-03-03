@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+            {{ form.game_no.label }}
+            {{ form.game_no }}
+            <br>
+            {{ form.losing_team.label }}
+            {{ form.losing_team }}
+            <br>
+            {{ form.winning_team.label }}
+            {{ form.winning_team }}
+            <br>
+            {{ form.score.label }}
+            {{ form.score }}
+            <br>
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock %}

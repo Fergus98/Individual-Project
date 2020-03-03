@@ -17,8 +17,8 @@ def createGame():
     if form.validate_on_submit():
         gameData = Game(
             game_no = form.game_no.data,
-            winning_team = form.winning_team.data,
             losing_team = form.losing_team.data,
+            winning_team = form.winning_team.data,
             score = form.score.data
         )
 
@@ -30,4 +30,4 @@ def createGame():
     else:
         print(form.errors)
 
-    return render_template('game.html', title='Add Game', form=form)
+    return render_template('games.html', title='Add Game', form=form)
