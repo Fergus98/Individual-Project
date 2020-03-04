@@ -1,9 +1,9 @@
 # import render_template function from the flask module
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
  # import the app object from the ./application/__init__.py
 from application import app, db
 from application.models import Game
-from application.forms import GameForm, PlayersForm
+from application.forms import *
  # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
 @app.route('/home')
@@ -32,11 +32,17 @@ def createGame():
 
     return render_template('games.html', title='Add Game', form=form)
 
-@app.route('/showgames', methods=['GET'])
+@app.route('/showgames', methods=['GET', 'POST'])
 def showGames():
     gameData=Game.query.all()
-    return render_template('showgames.html', title='Games', game=gameData)
-
+    form = DeleteGame()
+    if form.validate_on_submit():
+        game_to_delete = Game.query.filter(game_num=form.game_no.data).first()
+        db.session.delete(game_to_delete)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('showgames.html', title='Games', game=gameData, form=form)
+    
 
 @app.route('/players', methods=['GET', 'POST'])
 def createPlayers():
@@ -58,9 +64,4 @@ def createPlayers():
 
     return render_template('players.html', title='Players', form=form)
 
-@app.route('/deletegame', methods=['GET', 'POST'])
-def deleteGame():
-    db.session.delete('delete from game where game = ?', [request.form['game_to_delete']])
-    db.commit()
-    return redirect(url_for('showGames'))
 

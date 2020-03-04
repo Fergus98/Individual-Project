@@ -50,3 +50,6 @@ class PlayersForm(FlaskForm):
             Length(min=0, max=200)
         ]
     )
+class DeleteGame(FlaskForm):
+    game_num = IntegerField('Number to delete', validators =[DataRequired()])
+    submit = SubmitField('Delete')
