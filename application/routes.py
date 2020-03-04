@@ -58,3 +58,9 @@ def createPlayers():
 
     return render_template('players.html', title='Players', form=form)
 
+@app.route('/deletegame', methods=['GET', 'POST'])
+def deleteGame():
+    db.session.delete('delete from game where game = ?', [request.form['game_to_delete']])
+    db.commit()
+    return redirect(url_for('showGames'))
+
