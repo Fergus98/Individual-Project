@@ -3,13 +3,31 @@
     <h1>Game Table</h1>
     <p>Current Game League</p>
     <p1> Use the Navbar to acess the login page and start creating a game!</p1>
+	<style>
+	table, th, td {
+		border: 1px solid black;
+	}
+	</style>
+
+    
     {% for game in game %}
     
     	<div>
-            <h3>{{ game.game_no }}</h3>
-	    <h4><b> - Winning Team:</b>{{ game.winning_team }}</h4>
-	    <h4><b> - Losing Team:</b>{{ game.losing_team }}</h4>
-	    <h4><b> - Final Score:</b>{{ game.score }}</h4>
+		<table style="width:100%">
+			<tr>
+				<th>Game Number</th>
+				<th>Winning Team</th>
+				<th>Losing Team</th>
+				<th>Score</th>
+			</tr>
+			<tr>
+            
+				<td>{{ game.game_no }}</td>
+	    			<td>{{ game.winning_team }}</td>
+	    			<td>{{ game.losing_team }}</td>
+	    			<td>{{ game.score }}</td>
+			</tr>
+		</table>
         </div>
     {% endfor %}
 {% endblock body_content %}
