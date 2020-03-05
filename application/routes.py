@@ -38,17 +38,17 @@ def showGames():
     return render_template('showgames.html', title='Games', game=gameData)
     
 
-@app.route('/players', methods=['GET', 'POST'])
-def createPlayers():
-    form = PlayersForm()
+@app.route('/teams', methods=['GET', 'POST'])
+def createTeam():
+    form = TeamForm()
     if form.validate_on_submit():
-        playerData = Player(
+        teamData = Team(
             team_id = form.team_id.data,
             wins = form.wins.data,
             losses = form.losses.data
         )
 
-        db.session.add(playerData)
+        db.session.add(teamData)
         db.session.commit()
 
         return redirect(url_for('home'))
@@ -56,12 +56,12 @@ def createPlayers():
     else:
         print(form.errors)
 
-    return render_template('players.html', title='Players', form=form)
+    return render_template('team.html', title='Teams', form=form)
 
-@app.route('/game/delete/')
-def deleteGame():
-    game = Game.query.filter_by(toDelete).first()
+@app.route('/game/delete/<toDelete>')
+def deleteGame(toDelete):
+    game = Game.query.filter_by(game_no=toDelete).first()
     db.session.delete(game)
     db.session.commit()
-    return redirect(url_for('showgames'))
+    return redirect(url_for('showGames'))
 

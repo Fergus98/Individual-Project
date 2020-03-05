@@ -29,7 +29,7 @@ class GameForm(FlaskForm):
     )
     submit = SubmitField('Save the Game!')
 
-class PlayersForm(FlaskForm):
+class TeamForm(FlaskForm):
     team_id = IntegerField('Team Number',
         validators = [
             DataRequired(),
