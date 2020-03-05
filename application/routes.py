@@ -35,13 +35,7 @@ def createGame():
 @app.route('/showgames', methods=['GET', 'POST'])
 def showGames():
     gameData=Game.query.all()
-    form = DeleteGame()
-    if form.validate_on_submit():
-        game_to_delete = Game.query.filter(game_num=form.game_no.data).first()
-        db.session.delete(game_to_delete)
-        db.session.commit()
-        return redirect(url_for('home'))
-    return render_template('showgames.html', title='Games', game=gameData, form=form)
+    return render_template('showgames.html', title='Games', game=gameData)
     
 
 @app.route('/players', methods=['GET', 'POST'])
@@ -64,4 +58,10 @@ def createPlayers():
 
     return render_template('players.html', title='Players', form=form)
 
+@app.route('/game/delete/')
+def deleteGame():
+    game = Game.query.filter_by(toDelete).first()
+    db.session.delete(game)
+    db.session.commit()
+    return redirect(url_for('showgames'))
 

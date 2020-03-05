@@ -28,13 +28,8 @@
 	    			<td>{{ game.score }}</td>
 			</tr>
 		</table>
-		<form method='POST' action=''>
-		{{ form.game_no.label }}
-		{{ form.game_no }}
-		<br>
-		{{ form.submit }}
-		</br>
-		</form>
+		
+		<a href="{{ url_for('deleteGame', toDelete = game.game_no) }}">delete</a>
 	</div>
     {% endfor %}
 {% endblock body_content %}
