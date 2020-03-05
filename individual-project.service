@@ -4,7 +4,7 @@ Description=Flask Application
 User=pythonadm
 WorkingDirectory=/opt/individual-project
 ExecStart=/bin/bash \
-	-c 'cd /opt/flask-app && \
+	-c 'cd /opt/individual-project && \
 	source ./venv/bin/activate && \
 	python ./app.py'
 Environment=SECRET_KEY={{SECRET_KEY}}
