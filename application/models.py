@@ -26,7 +26,7 @@ class Team(db.Model):
 class Players(db.Model):
     player_id = db.Column(db.Integer, primary_key=True)
     team = db.Column(db.Integer, nullable=False)
-    player_name = db.Column(db.String, nullable=False)
+    player_name = db.Column(db.String(30), nullable=False)
 
     def __repr__(self):
         return ''.join([

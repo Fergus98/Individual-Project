@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <h1>Team Table</h1>
+    <p>Current Existing Teams</p>
+    <p1> Use the Navbar to acess the login page and start creating a game!</p1>
+        <style>
+        table, th, td {
+                border: 1px solid black;
+        }
+        </style>
+
+
+    {% for team in team %}
+
+        <div>
+                <table style="width:100%">
+                        <tr>
+                                <th>Team ID</th>
+                                <th>Wins</th>
+                                <th>Losses</th>
+     
+                        </tr>
+                        <tr>
+
+                                <td>{{ team.team_id }}</td>
+                                <td>{{ team.wins }}</td>
+                                <td>{{ team.losses }}</td>
+                 
+                        </tr>
+                </table>
+
+                <a href="{{ url_for('deleteTeam', teamDelete = team.team_id) }}">Delete</a>
+        </div>
+    {% endfor %}
+{% endblock body_content %}

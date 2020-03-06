@@ -2,14 +2,14 @@
 from flask import render_template, redirect, url_for, request
  # import the app object from the ./application/__init__.py
 from application import app, db
-from application.models import Game
+from application.models import *
 from application.forms import *
  # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
 @app.route('/home')
 def home():
-    gameData = Game.query.first()
-    return render_template('home.html', title='Home', game=gameData)
+    
+    return render_template('home.html', title='Home')
 
 @app.route('/game', methods=['GET', 'POST'])
 def createGame():
@@ -36,7 +36,16 @@ def createGame():
 def showGames():
     gameData=Game.query.all()
     return render_template('showgames.html', title='Games', game=gameData)
-    
+
+@app.route('/showteams', methods=['GET', 'POST'])
+def showTeams():
+    teamData=Team.query.all()
+    return render_template('showteams.html', title='Teams', team=teamData)
+
+@app.route('/showplayers', methods=['GET','POST'])
+def showPlayers():
+    playerData=Players.query.all()
+    return render_template('showplayers.html', title='Players', player=playerData)
 
 @app.route('/teams', methods=['GET', 'POST'])
 def createTeam():
@@ -63,7 +72,7 @@ def createTeam():
 def createPlayer():
     form = PlayerForm()
     if form.validate_on_submit():
-        playerData = Player(
+        playerData = Players(
             player_id = form.player_id.data,
             team = form.team.data,
             player_name = form.player_name.data
@@ -77,8 +86,25 @@ def createPlayer():
     else:
         print(form.errors)
 
-    return render_template('player.html', title='PLayers', form=form)
+    return render_template('players.html', title='PLayers', form=form)
 
+
+@app.route('/game/update/<toUpdate>', methods=['GET', 'POST'])
+def updateGame(toUpdate):
+    game = Game.query.filter_by(game_no=toUpdate).first()
+    form = UpdateGame()
+    if form.validate_on_submit():
+        game_no.data = form.game_no.data
+        losing_team.data = form.losing_team.data
+        winning_team.data = form.winning_team.data
+        score.data = form.score.data
+        db.session.commit()
+        return redirect(url_for('showGames'))
+    form.game_no.data = form.game_no
+    form.losing_team.data = form.losing_team
+    form.winning_team.data = form.winning_team
+    form.score.data = form.score
+    return render_template('showgames.html', title='New', form=form)
 
 @app.route('/game/delete/<toDelete>')
 def deleteGame(toDelete):
@@ -87,3 +113,16 @@ def deleteGame(toDelete):
     db.session.commit()
     return redirect(url_for('showGames'))
 
+@app.route('/team/delete/<teamDelete>')
+def deleteTeam(teamDelete):
+    team = Team.query.filter_by(team_id=teamDelete).first()
+    db.session.delete(team)
+    db.session.commit()
+    return redirect(url_for('showTeams'))
+
+@app.route('/player/delete/<playerDelete>')
+def deletePlayer(playerDelete):
+    player = Players.query.filter_by(player_id=playerDelete).first()
+    db.session.delete(player)
+    db.session.commit()
+    return redirect(url_for('showPlayers'))
