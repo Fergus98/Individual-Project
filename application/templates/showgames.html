@@ -28,7 +28,11 @@
 	    			<td>{{ game.score }}</td>
 			</tr>
 		</table>
-		<a href="{{ url_for('updateGame', toUpdate = game.game_no) }}">Update</a>
+		<form method="POST" action="./update">
+    		<input type="hidden" value="{{game.game_no}}" name="oldgame">
+    		<input type="text" value="{{game.game_no}}" name="newgame">
+    		<input type="submit" value="Update">
+  		</form>
 		<a href="{{ url_for('deleteGame', toDelete = game.game_no) }}">Delete</a>
 	</div>
     {% endfor %}
