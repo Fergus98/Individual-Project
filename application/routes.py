@@ -86,7 +86,7 @@ def createPlayer():
     else:
         print(form.errors)
 
-    return render_template('players.html', title='PLayers', form=form)
+    return render_template('players.html', title='Players', form=form)
 
 
 @app.route("/game/update", methods=["POST"])
