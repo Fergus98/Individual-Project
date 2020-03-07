@@ -59,3 +59,15 @@ class TestViews(TestBase):
         """
         response = self.client.get(url_for('showGames'))
         self.assertEqual(response.status_code, 200)
+        
+         """
+        Test that homepage is accessible without login
+        """
+        response = self.client.get(url_for('showTeams'))
+        self.assertEqual(response.status_code, 200)
+        
+         """
+        Test that homepage is accessible without login
+        """
+        response = self.client.get(url_for('showPlayers'))
+        self.assertEqual(response.status_code, 200)
