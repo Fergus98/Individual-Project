@@ -89,17 +89,15 @@ def createPlayer():
     return render_template('players.html', title='PLayers', form=form)
 
 
-@app.route('/game/update/<toUpdate>', methods=['GET', 'POST'])
-def updateGame(toUpdate):
-    @app.route("/update", methods=["POST"])
+@app.route("/game/update", methods=["POST"])
 def update():
     newgame = request.form.get("newgame")
     oldgame = request.form.get("oldgame")
-    game = Game.query.filter_by(title=oldgame).first()
+    game = Game.query.filter_by(game_no=oldgame).first()
     game.game_no = newgame
     db.session.commit()
     
-    return render_template('showgames.html', title='New', form=form)
+    return redirect(url_for('showGames'))
 
 @app.route('/game/delete/<toDelete>')
 def deleteGame(toDelete):

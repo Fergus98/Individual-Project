@@ -28,7 +28,7 @@
 	    			<td>{{ game.score }}</td>
 			</tr>
 		</table>
-		<form method="POST" action="./update">
+		<form method="POST" action="/game/update">
     		<input type="hidden" value="{{game.game_no}}" name="oldgame">
     		<input type="text" value="{{game.game_no}}" name="newgame">
     		<input type="submit" value="Update">
