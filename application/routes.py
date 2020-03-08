@@ -91,25 +91,11 @@ def createPlayer():
 
 @app.route("/game/update", methods=["POST"])
 def update():
-    newgame = request.form.get("newgame")
-    oldgame = request.form.get("oldgame")
-    game = Game.query.filter_by(game_no=oldgame).first()
-    game.game_no = newgame
-    
-    newlose = request.form.get("newlose")
-    oldlose = request.form.get("oldlose")
-    lose = Game.query.filter_by(losing_team=oldlose).first()
-    lose.losing_team = newlose
-    
-    #newgame = request.form.get("newgame")
-    #oldgame = request.form.get("oldgame")
-    #game = Game.query.filter_by(game_no=oldgame).first()
-    #game.game_no = newgame
-    
-    #newgame = request.form.get("newgame")
-    #oldgame = request.form.get("oldgame")
-    #game = Game.query.filter_by(game_no=oldgame).first()
-    #game.game_no = newgame
+    newscore = request.form.get("newscore")
+    oldscore = request.form.get("oldscore")
+    score = Game.query.filter_by(score=oldscore).first()
+    score.score = newscore
+   
     db.session.commit()
     
     return redirect(url_for('showGames'))
