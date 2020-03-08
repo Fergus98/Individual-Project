@@ -1,5 +1,5 @@
 # import render_template function from the flask module
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, flash
  # import the app object from the ./application/__init__.py
 from application import app, db
 from application.models import *
