@@ -97,25 +97,5 @@ I decided to create some rough wireframes to visualise the design of the applica
 
 # Test Cases
 
-Test Case No.
-Input
-Output
-#1
-get(url_for('showGames'))
-assertEqual(response.status_code, 200)
-#2
-get(url_for('showTeams'))
-assertEqual(response.status_code, 200)
-#3
-get(url_for('showPlayers'))
-assertEqual(response.status_code, 200)
-#4
-get(url_for('createGame'))
-assertEqual(response.status_code, 200)
-#5
-get(url_for('createTeam'))
-assertEqual(response.status_code, 200)
-#6
-get(url_for('createPlayer'))
-assertEqual(response.status_code, 200)
+<img width="378" alt="TESTCASES" src="https://user-images.githubusercontent.com/9552989/76163792-26350980-6141-11ea-8483-28038e5b5a55.PNG">
 
