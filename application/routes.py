@@ -28,6 +28,7 @@ def createGame():
         try:
             db.session.commit()
         except IntegrityError:
+            flash("Already an entry, you have been returned to the homepage, try again!")
             db.session.rollback()
           
 
