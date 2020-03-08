@@ -4,7 +4,7 @@ class Game(db.Model):
     game_no = db.Column(db.Integer, primary_key=True)
     losing_team = db.Column(db.String(30), nullable=False)
     winning_team = db.Column(db.String(30), nullable=False)
-    score = db.Column(db.String(100), nullable=False, unique=True)
+    score = db.Column(db.Integer, nullable=False, unique=True)
 
     def __repr__(self):
         return ''.join([
