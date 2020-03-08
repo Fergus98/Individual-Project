@@ -91,7 +91,7 @@ I decided to create some rough wireframes to visualise the design of the applica
 
 # CI Pipeline
 
-
+![CI Pipeline](https://user-images.githubusercontent.com/9552989/76163766-f38b1100-6140-11ea-97b1-6c49be7e4151.jpg)
 
 
 
