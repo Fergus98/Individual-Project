@@ -16,7 +16,7 @@ class Team(db.Model):
     team_id = db.Column(db.Integer, primary_key=True)
     wins = db.Column(db.Integer, nullable=False)
     losses = db.Column(db.Integer, nullable=False)
-    players = db.relationship('Players', backref='author', lazy=True)
+
 
     def __repr__(self):
         return ''.join([
