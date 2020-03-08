@@ -30,10 +30,10 @@
                 </table>
             
                 <form method="POST" action="/team/update">
-    		    <input type="hidden" value="{{team.wins}}" name="oldwins">
-    		    <input type="text" value="{{team.wins}}"newwins
-    		    <input type="submit" value="Update">
-  		        </form>
+                <input type="hidden" value="{{team.wins}}" name="oldwins">
+                <input type="text" value="{{team.wins}}"newwins
+                <input type="submit" value="Update">
+                </form>
 
                 <a href="{{ url_for('deleteTeam', teamDelete = team.team_id) }}">Delete</a>
         </div>
