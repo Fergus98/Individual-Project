@@ -6,25 +6,25 @@ class GameForm(FlaskForm):
     game_no = StringField('Game Number',
         validators = [
             DataRequired(),
-            Length(min=2, max=30)
+            Length(min=0, max=30)
         ]
     )
     losing_team = StringField('Losing Team',
         validators = [
             DataRequired(),
-            Length(min=2, max=30)
+            Length(min=4, max=30)
         ]
     )
     winning_team = StringField('Winning Team',
         validators = [
             DataRequired(),
-            Length(min=2, max=100)
+            Length(min=4, max=100)
         ]
     )
-    score = StringField('Game Score',
+    score = IntegerField('Game Score',
         validators = [
             DataRequired(),
-            Length(min=2, max=1000)
+            Length(min=0, max=1000)
         ]
     )
     submit = SubmitField('Save the Game!')
