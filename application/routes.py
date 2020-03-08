@@ -60,6 +60,7 @@ def createTeam():
     if form.validate_on_submit():
         teamData = Team(
             team_id = form.team_id.data,
+            player_id = players.player_id.data,
             wins = form.wins.data,
             losses = form.losses.data
         )
