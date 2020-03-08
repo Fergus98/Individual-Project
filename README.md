@@ -80,7 +80,7 @@ https://trello.com/b/CG5JGmIm/personal-project-sprint-1
 
 # Wireframes 
 
-I decided to create some rough wireframes to visualise the design of the application. This allowed me to break down the pages that I would need to create in order to get the CRUD functional application.
+I decided to create some rough wireframes to visualise the design of the application. This allowed me to break down the pages that I would need to create in order to get the CRUD functional application. The pages for Create Team, Create Player, show Team and Show Player, would be almost exactly the same as the Create and Show Games pages.
 
 
 <img width="401" alt="HOMEWIREFRAME" src="https://user-images.githubusercontent.com/9552989/76164127-3c909480-6144-11ea-9869-223452c85576.PNG">
