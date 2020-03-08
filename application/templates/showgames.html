@@ -33,6 +33,12 @@
     		<input type="text" value="{{game.game_no}}" name="newgame">
     		<input type="submit" value="Update">
   		</form>
+		
+		<form method="POST" action="/game/update">
+    		<input type="hidden" value="{{lose.losing_team}}" name="oldlose">
+    		<input type="text" value="{{lose.losing_team}}" name="newlose">
+    		<input type="submit" value="Update">
+  		</form>
 		<a href="{{ url_for('deleteGame', toDelete = game.game_no) }}">Delete</a>
 	</div>
     {% endfor %}
