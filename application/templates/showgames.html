@@ -29,16 +29,11 @@
 			</tr>
 		</table>
 		<form method="POST" action="/game/update">
-    		<input type="hidden" value="{{game.game_no}}" name="oldgame">
-    		<input type="text" value="{{game.game_no}}" name="newgame">
+    		<input type="hidden" value="{{game.score}}" name="oldscore">
+    		<input type="text" value="{{game.score}}" name="newscore">
     		<input type="submit" value="Update">
   		</form>
-		
-		<form method="POST" action="/game/update">
-    		<input type="hidden" value="{{game.losing_team}}" name="oldlose">
-    		<input type="text" value="{{game.losing_team}}" name="newlose">
-    		<input type="submit" value="Update">
-  		</form>
+
 		<a href="{{ url_for('deleteGame', toDelete = game.game_no) }}">Delete</a>
 	</div>
     {% endfor %}
