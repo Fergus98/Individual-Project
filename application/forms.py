@@ -23,8 +23,7 @@ class GameForm(FlaskForm):
     )
     score = IntegerField('Game Score',
         validators = [
-            DataRequired(),
-            Length(min=0, max=1000)
+            DataRequired()
         ]
     )
     submit = SubmitField('Save the Game!')
