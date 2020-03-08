@@ -100,7 +100,7 @@ def update():
     
     return redirect(url_for('showGames'))
    
-@app.route("/team/update", methods=["POST"])
+@app.route("/teams/update", methods=["POST"])
 def update():
     newwins = request.form.get("newwins")
     oldwins = request.form.get("oldwins")
