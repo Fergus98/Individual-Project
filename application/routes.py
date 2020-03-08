@@ -81,7 +81,7 @@ def createPlayer():
     if form.validate_on_submit():
         playerData = Players(
             player_id = form.player_id.data,
-            team = form.team.data,
+            team = "fergus",
             player_name = form.player_name.data
         )
 
