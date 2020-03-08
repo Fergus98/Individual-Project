@@ -4,6 +4,8 @@ from flask import render_template, redirect, url_for, request
 from application import app, db
 from application.models import *
 from application.forms import *
+from sqlalchemy.exc import IntegrityError
+
  # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
 @app.route('/home')
@@ -23,7 +25,11 @@ def createGame():
         )
 
         db.session.add(gameData)
-        db.session.commit()
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+          
 
         return redirect(url_for('home'))
 
