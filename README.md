@@ -83,10 +83,11 @@ https://trello.com/b/CG5JGmIm/personal-project-sprint-1
 I decided to create some rough wireframes to visualise the design of the application. This allowed me to break down the pages that I would need to create in order to get the CRUD functional application.
 
 
+<img width="401" alt="HOMEWIREFRAME" src="https://user-images.githubusercontent.com/9552989/76164127-3c909480-6144-11ea-9869-223452c85576.PNG">
 
+<img width="400" alt="CREATEGAMEWIREFRAME" src="https://user-images.githubusercontent.com/9552989/76164130-431f0c00-6144-11ea-8db6-77900e19d6cd.PNG">
 
-
-
+<img width="399" alt="SHOWGAMESWIREFRAME" src="https://user-images.githubusercontent.com/9552989/76164134-474b2980-6144-11ea-9286-0d8aa175e4c0.PNG">
 
 
 # CI Pipeline
