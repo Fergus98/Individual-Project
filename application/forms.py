@@ -54,7 +54,7 @@ class PlayerForm(FlaskForm):
             DataRequired(),
         ]
     )
-    team = StringField('Team',
+    team1 = StringField('Team',
         validators = [
             DataRequired(),
         ]
