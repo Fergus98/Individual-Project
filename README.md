@@ -7,11 +7,11 @@ This project looks at the steps taken and the completion of a baseball scoring s
 
 # User Stories
 
-As a user I want to be able to add teams so we can track our progress.
-As a user I want to be able to add players so I can have my team members tracked.
-As a user I want to be able to add scores for the teams so I can track our progress.
-As a user I want to be able to add runs so I can keep score.
-As a user I want to be able to add games so I can keep track of multiple games.
+- As a user I want to be able to add teams so we can track our progress.
+- As a user I want to be able to add players so I can have my team members tracked.
+- As a user I want to be able to add scores for the teams so I can track our progress.
+- As a user I want to be able to add runs so I can keep score.
+- As a user I want to be able to add games so I can keep track of multiple games.
 
 # Entity Relationship Diagram
 
