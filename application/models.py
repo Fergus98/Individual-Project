@@ -31,5 +31,5 @@ class Players(db.Model):
     def __repr__(self):
         return ''.join([
             'Player ID: ', self.player_id,'\r\n',
-            'Team: ', self.team, '\r\n', 'Player Name: ', self.player_name
+            'Team: ', self.team1, '\r\n', 'Player Name: ', self.player_name
             ])
