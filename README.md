@@ -40,37 +40,7 @@ Update Games
 
 My risk assessment attempts to cover all potential risk that could occur during the project, and any measures I can take to prevent aforementioned risks.
 
-Risk
-Likelihood
-Impact
-Action
-Illness
-Medium
-Medium, would slow work 
-
-
-Running out of time
-Low
-High, product would be unfinished
-Work on MVP, ensure MVP is completed
-Losing Code
-Medium
-Medium, progressed slowed
-Using GitHub, saved off laptop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="380" alt="riskassessment" src="https://user-images.githubusercontent.com/9552989/76169081-dec47280-616c-11ea-9d12-047b62ec1dc2.PNG">
 
 
 
