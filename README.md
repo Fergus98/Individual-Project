@@ -91,11 +91,15 @@ I decided to create some rough wireframes to visualise the design of the applica
 
 # CI Pipeline
 
+Below is an image of the CI pipeline that my project follows. The Jenkins VM will automatically pull code from GitHub once it detects a new change/commit. It will then run the tests locally in the Jenkins VM, if the tests are successful, the app will automatically build and deploy to a seperate VM. Jenkins also sets up the connection for the seperate database instance hosted on azure.
+
 ![CI Pipeline](https://user-images.githubusercontent.com/9552989/76163766-f38b1100-6140-11ea-97b1-6c49be7e4151.jpg)
 
 
 
 # Test Cases
+
+Below are the test cases created to test the system.
 
 <img width="378" alt="TESTCASES" src="https://user-images.githubusercontent.com/9552989/76163792-26350980-6141-11ea-8483-28038e5b5a55.PNG">
 
