@@ -94,7 +94,7 @@ class TestViews(TestBase):
        response = self.client.get(url_for('deleteTeam'))
        self.assertEqual(response.status_code, 200)
         
-     def test_deletePlayer_view(self):
+    def test_deletePlayer_view(self):
         
        """
        Test that homepage is accessible without login
