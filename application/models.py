@@ -14,6 +14,7 @@ class Game(db.Model):
 
 class Team(db.Model):
     team_id = db.Column(db.Integer, primary_key=True)
+    player_id = db.Column(db.Integer, db.ForeignKey('players.player_id'), primary_key=True)
     wins = db.Column(db.Integer, nullable=False)
     losses = db.Column(db.Integer, nullable=False)
 
