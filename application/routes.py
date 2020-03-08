@@ -99,6 +99,17 @@ def update():
     db.session.commit()
     
     return redirect(url_for('showGames'))
+   
+@app.route("/team/update", methods=["POST"])
+def update():
+    newwins = request.form.get("newwins")
+    oldwins = request.form.get("oldwins")
+    wins = Team.query.filter_by(wins=oldwins).first()
+    wins.wins = newwins
+   
+    db.session.commit()
+    
+    return redirect(url_for('showTeams'))
 
 @app.route('/game/delete/<toDelete>')
 def deleteGame(toDelete):
