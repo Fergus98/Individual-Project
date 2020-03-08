@@ -78,26 +78,26 @@ class TestViews(TestBase):
         response = self.client.get(url_for('showPlayers'))
         self.assertEqual(response.status_code, 200)
         
-    def test_deleteGame_view(self):
+    def test_createGame_view(self):
         
        """
        Test that homepage is accessible without login
        """
-       response = self.client.get(url_for('deleteGame'))
+       response = self.client.get(url_for('createGame'))
        self.assertEqual(response.status_code, 200)
         
-    def test_deleteTeam_view(self):
+    def test_createTeam_view(self):
         
        """
        Test that homepage is accessible without login
        """
-       response = self.client.get(url_for('deleteTeam'))
+       response = self.client.get(url_for('createTeam'))
        self.assertEqual(response.status_code, 200)
         
-    def test_deletePlayer_view(self):
+    def test_createPlayer_view(self):
         
        """
        Test that homepage is accessible without login
        """
-       response = self.client.get(url_for('deletePlayer'))
+       response = self.client.get(url_for('createPlayer'))
        self.assertEqual(response.status_code, 200)
