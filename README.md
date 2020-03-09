@@ -57,3 +57,7 @@ Below are the test cases created to test the system.
 
 <img width="378" alt="TESTCASES" src="https://user-images.githubusercontent.com/9552989/76163792-26350980-6141-11ea-8483-28038e5b5a55.PNG">
 
+# Evaluation  
+
+Overall I would consider this project to be a success. The application is functional and my CI pipeline works seamlessly to deploy the application. Moving forward, however, I would definitely work to build a more complicated and visually pleasing application. I had my MVP (Minimum Viable Product) in mind during the creation due to the time constraint. This being said, I am still happy with the final product. 
+
