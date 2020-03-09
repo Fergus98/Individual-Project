@@ -17,7 +17,7 @@ This project looks at the steps taken and the completion of a baseball scoring s
 
 The entity relationship diagrams I created provided the relationships for the database I will create for the application. 
 
-
+![Project 1 ERD](https://user-images.githubusercontent.com/9552989/76192941-de62c080-61da-11ea-875d-dc05a15b54bb.jpg)
 
 # Risk Assessment
 
