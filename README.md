@@ -17,23 +17,6 @@ This project looks at the steps taken and the completion of a baseball scoring s
 
 The entity relationship diagrams I created provided the relationships for the database I will create for the application. 
 
-# Requirements
-
-Functional
-Non-functional
-Create Games
-Easy to navigate website
-Create Players
-Nice to use
-Create Teams
-
-
-Update Games
-
-
-
-
-
 
 
 # Risk Assessment
