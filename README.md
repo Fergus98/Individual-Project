@@ -12,6 +12,8 @@ This project looks at the steps taken and the completion of a baseball scoring s
 - As a user I want to be able to add scores for the teams so I can track our progress.
 - As a user I want to be able to add runs so I can keep score.
 - As a user I want to be able to add games so I can keep track of multiple games.
+- As a Developer I want to be able to follow the code easily so I can makes changes
+- As a Devleoper I want an easy to follow file structure so that I can find what I need to work on
 
 # Entity Relationship Diagram
 
