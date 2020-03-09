@@ -53,7 +53,19 @@ Below is an image of the CI pipeline that my project follows. The Jenkins VM wil
 
 # Test Cases
 
-Below are the test cases created to test the system.
+Below are the test cases created to test the system. I managed to accomplish a 67% coverage.
+
+----------- coverage: platform linux, python 3.6.9-final-0 -----------
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+application/__init__.py       9      0   100%
+application/forms.py         25      0   100%
+application/models.py        20      3    85%
+application/routes.py        77     40    48%
+---------------------------------------------
+TOTAL                       131     43    67%
+
+========================= 7 passed, 1 warning in 2.74s =========================
 
 <img width="378" alt="TESTCASES" src="https://user-images.githubusercontent.com/9552989/76163792-26350980-6141-11ea-8483-28038e5b5a55.PNG">
 
