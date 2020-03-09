@@ -29,6 +29,8 @@ My risk assessment attempts to cover all potential risk that could occur during 
 
 # Trello Board
 
+I used a Trello Board to keep track of my progress. I colour coordinated the sprints and MoSCoW prioritisation. This allowed me to keep on top of everything I had to complete during the project.
+
 https://trello.com/b/CG5JGmIm/personal-project-sprint-1
 
 # Wireframes 
