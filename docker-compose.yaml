@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  myapp:
+    build: .
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: baseball
+    ports:
+    - "3306:3306"
