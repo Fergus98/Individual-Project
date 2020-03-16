@@ -1,35 +1,26 @@
 version: '3.7'
 services:
   myapp:
-    image: fergus98/verse_gapminder
+    image: fergus98/flaskapp:v1
     build: .
-    networks:
-    - testnet
     ports:
     - target: 5000
       published: 5000
+    deploy:
+      replicas: 4
     depends_on:
     - mysql
     environment:
     - DATABASE_URI=mysql+pymysql://root:password@mysql/baseball
     - SECRET_KEY=jhgfghj
   mysql:
-    image: mysql:5.7
-    container_name: mysql
-    networks: 
-    - testnet
-    ports:
-    - target: 3306
-      published: 3306
+    image: fergus98/flaskdb:v1
     environment:
     - MYSQL_ROOT_PASSWORD=password
-    - MYSQL_DATABASE=baseball
     volumes:
     - type: volume
       source: sqlvol
       target: /var/lib/mysql
-networks:
- testnet:
 volumes:
  sqlvol:
 
