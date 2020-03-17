@@ -1,5 +1,5 @@
 CREATE DATABASE baseball;
-CREATE table baseball.game(
+CREATE TABLE baseball.game(
 	game_no INTEGER NOT NULL PRIMARY KEY,
 	losing_team STRING(30) NOT NULL,
 	winning_team STRING(30) NOT NULL,

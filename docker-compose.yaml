@@ -3,9 +3,6 @@ services:
   myapp:
     image: fergus98/flaskapp:v1
     build: .
-    ports:
-    - target: 5000
-      published: 5000
     deploy:
       replicas: 4
     depends_on:
@@ -13,6 +10,17 @@ services:
     environment:
     - DATABASE_URI=mysql+pymysql://root:password@mysql/baseball
     - SECRET_KEY=jhgfghj
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+    volumes:
+    - type: bind
+      source: ./nginx.conf
+      target: /etc/nginx/nginx.conf
+    depends_on:
+      - myapp  
   mysql:
     image: fergus98/flaskdb:v1
     environment:
